@@ -1,0 +1,17 @@
+{
+  "name": "signalk-raspberry-pi-1wire",
+  "version": "1.0.0",
+  "description": "1-Wire temperature sensors on Raspberry-Pi for Signal-K",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "signalk-node-server-plugin"
+  ],
+  "author": "Ewald van Gemert",
+  "license": "ISC",
+  "dependencies": {
+    "ds18b20": "^0.1.0"
+  }
+}
