@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-const debug = require('debug')('signalk-raspberry-pi-1wire')
 const _ = require('underscore')
 const _ds18b20 = require('ds18b20')
 
 module.exports = function (app) {
   let _deviceList = [];
+  let _timer = null;
   let plugin = {}
 
   plugin.id = 'raspberry-pi-1wire'
@@ -73,6 +73,7 @@ module.exports = function (app) {
         // create if not exists
         if (!device) {
           device = newSensor(id)
+          if (!options.devices) options.devices = [];
           options.devices.push(device)
           saveOptions = true
         }
@@ -83,20 +84,19 @@ module.exports = function (app) {
       // save devicelist if new device detected
       if (saveOptions) {
         app.savePluginOptions(options, function () {
-          debug('send delta: ' + JSON.stringify(delta))
         })
       }
       
       measureTemperatures()
-      timer = setInterval(measureTemperatures, options.rate * 1000)
+      _timer = setInterval(measureTemperatures, options.rate * 1000)
     })
   }
 
   plugin.stop = function () {
     _deviceList = []
-    if (timer) {
-      clearInterval(timer)
-      timer = null
+    if (_timer) {
+      clearInterval(_timer)
+      _timer = null
     }
   }
 
@@ -105,10 +105,8 @@ module.exports = function (app) {
       // measure temperature
       _ds18b20.temperature(device.oneWireId, function (err, value) {
         var temperature = value + 273.15
-        debug(`temperature @ ${device.locationName} is ${temperature} K`)
         // create message
         var delta = createDeltaMessage(device, temperature)
-        debug('send delta: ' + JSON.stringify(delta))
         // send temperature
         app.handleMessage(plugin.id, delta)
       })
@@ -145,4 +143,3 @@ module.exports = function (app) {
 
   return plugin
 }
-

@@ -4,7 +4,7 @@
   "description": "SignalK node server plugin that reads data from 1-Wire temperature sensors on Raspberry-Pi",
   "license": "ISC",
   "homepage": "https://github.com/ewaldvangemert/signalk-raspberry-pi-1wire#readme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "keywords": [
     "signalk-node-server-plugin"
@@ -12,13 +12,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ewaldvangemert/signalk-raspberry-pi-1wire.git"
-  },  
+  },
   "bugs": {
     "url": "https://github.com/ewaldvangemert/signalk-raspberry-pi-1wire/issues"
-  },  
+  },
   "dependencies": {
     "ds18b20": "^0.1.0",
-    "underscore": ""
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
