@@ -29,12 +29,12 @@ You will have to enable the 1-wire protocol on the Raspberry-Pi
 
 ### Building examples
 
-- [alt BreadBoard Example](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-breadboard-1wire.jpg)
+- ![alt BreadBoard Example](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-breadboard-1wire.jpg)
 
 You can use a ISDN splitter to house a sensor, and plugin two more sensors. You will need to alter and solder the PCB.
 
-- [alt ISDN splitter internals](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-1wire-from-isdn-splitter.jpg)
-- [alt ISDN splitter](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-1wire-from-isdn-splitter2.jpg)
+- ![alt ISDN splitter internals](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-1wire-from-isdn-splitter.jpg)
+- ![alt ISDN splitter](https://raw.githubusercontent.com/ewaldvangemert/signalk-raspberry-pi-1wire/master/examples/raspberry-1wire-from-isdn-splitter2.jpg)
 
 ## Contributing
 
